@@ -8,7 +8,6 @@ from keras.models import Model
 from keras.utils import to_categorical
 from keras.applications.resnet50 import ResNet50, preprocess_input
 
-
 parser = argparse.ArgumentParser(description='Make and store the caches with a ResNet-50 backbone')
 parser.add_argument('--train_data_dir', type=str, help='directory where pre-processed ImageNet training data is stored')
 parser.add_argument('--mem_save_dir', type=str, help='directory where the caches will be stored')
