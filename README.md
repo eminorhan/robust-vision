@@ -16,4 +16,4 @@ python3 imagenet_preprocess_train.py --source_dir /SOURCE/PATH/ --target_dir /TA
 python3 resnet50_make_cache.py --train_data_dir /TRAIN/DATA/PATH/ --mem_save_dir /CACHE/SAVE/PATH/ --layer 'activation_46'
 ```
 
-
+3. Generate black-box and gray-box adversarial images by running ??, e.g.:
