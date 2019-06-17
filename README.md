@@ -33,3 +33,14 @@ python3 pca_cache.py --mem_save_dir /CACHE/SAVE/PATH/ --layer 'activation_46' --
 ```
 python3 generate_graybox_adversarial.py --base_dir /BASE/PATH/ --epsilon 0.06
 ```
+
+5. Evaluate the clean, gray-box and black-box adversarial accuracies of the cache models by running `evaluate_clean.py`, `evaluate_graybox.py`, and `evaluate_blackbox.py`, respectively, e.g.:
+```
+python3 evaluate_clean.py --
+```
+
+6. Run white-box attacks against the cache models by running `generate_whitebox_adversarial.py`, e.g.:
+```
+python3 generate_whitebox_adversarial.py --
+```
+
