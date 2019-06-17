@@ -34,7 +34,7 @@ python3 pca_cache.py --mem_save_dir /CACHE/SAVE/DIR/ --layer 'activation_46' --r
 python3 generate_graybox_adversarial.py --base_dir /BASE/DIR/ --epsilon 0.06
 ```
 
-5. Evaluate the clean, gray-box and black-box adversarial accuracies of the cache models by running `evaluate_clean.py`, `evaluate_graybox.py`, and `evaluate_blackbox.py`, respectively, e.g.:
+5. Evaluate the clean, gray-box and black-box adversarial accuracies of the cache models by running `evaluate_clean.py`, `evaluate_graybox.py`, or `evaluate_blackbox.py`, respectively, e.g.:
 ```
 python3 evaluate_clean.py --val_data_dir /VAL/DATA/DIR/ --mem_save_dir /CACHE/SAVE/DIR/ --layer 'activation_46' --theta 50.0
 ```
