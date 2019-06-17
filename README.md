@@ -16,27 +16,27 @@ A successful replication would involve the following steps:
 
 1. Pre-process the raw ImageNet training and validation images by running `imagenet_preprocess_train.py` and `imagenet_preprocess_val.py`, e.g.:
 ```
-python3 imagenet_preprocess_train.py --source_dir /SOURCE/PATH/ --target_dir /TARGET/PATH/
+python3 imagenet_preprocess_train.py --source_dir /SOURCE/DIR/ --target_dir /TARGET/DIR/
 ```
 
 2. Make and store the cache by running `make_cache.py`, e.g.:
 ```
-python3 make_cache.py --train_data_dir /TRAIN/DATA/PATH/ --mem_save_dir /CACHE/SAVE/PATH/ --layer 'activation_46'
+python3 make_cache.py --train_data_dir /TRAIN/DATA/DIR/ --mem_save_dir /CACHE/SAVE/DIR/ --layer 'activation_46'
 ```
 
 3. For experiments in section 4.2, also compress the cache by running `pca_cache.py` and `kmeans_cache.py`, e.g.:
 ```
-python3 pca_cache.py --mem_save_dir /CACHE/SAVE/PATH/ --layer 'activation_46' --reduce_factor 8
+python3 pca_cache.py --mem_save_dir /CACHE/SAVE/DIR/ --layer 'activation_46' --reduce_factor 8
 ```
 
 4. Generate black-box and gray-box adversarial images by running `generate_blackbox_adversarial.py` and `generate_graybox_adversarial.py`, e.g.:
 ```
-python3 generate_graybox_adversarial.py --base_dir /BASE/PATH/ --epsilon 0.06
+python3 generate_graybox_adversarial.py --base_dir /BASE/DIR/ --epsilon 0.06
 ```
 
 5. Evaluate the clean, gray-box and black-box adversarial accuracies of the cache models by running `evaluate_clean.py`, `evaluate_graybox.py`, and `evaluate_blackbox.py`, respectively, e.g.:
 ```
-python3 evaluate_clean.py --
+python3 evaluate_clean.py --val_data_dir /VAL/DATA/DIR/ --mem_save_dir /CACHE/SAVE/DIR/ --layer 'activation_46' --theta 50.0
 ```
 
 6. Run white-box attacks against the cache models by running `generate_whitebox_adversarial.py`, e.g.:
