@@ -1,6 +1,8 @@
 # Improving the robustness of ImageNet classifiers with an episodic memory and a shape bias
 The code here can be used to reproduce the results reported in the following paper:
 
+Orhan AE, Lake BM (2019) Improving the robustness of ImageNet classifiers using elements of human visual cognition. arxiv:???
+
 ## Requirements
 * Keras >= 2.2.4
 * scikit-learn >= 0.20.3 
@@ -8,8 +10,9 @@ The code here can be used to reproduce the results reported in the following pap
 * foolbox >= 1.8.0
 * image-classifiers >= 0.2.1
 * ImageNet training and validation data in their standard directory structure.
+* ImageNet-C data in its standard directory structure (for ImageNet-C results only).
 
-We recommend the installation of the required packages via `pip3` inside a virtual environment.
+We recommend installing the required packages via `pip3` inside a virtual environment.
 
 ## Replication
 A successful replication would involve the following steps:
@@ -34,7 +37,7 @@ python3 pca_cache.py --mem_save_dir /CACHE/SAVE/DIR/ --layer 'activation_46' --r
 python3 generate_graybox_adversarial.py --base_dir /BASE/DIR/ --epsilon 0.06
 ```
 
-5. Evaluate the clean, gray-box and black-box adversarial accuracies of the cache models by running `evaluate_clean.py`, `evaluate_graybox.py`, or `evaluate_blackbox.py`, respectively, e.g.:
+5. Evaluate the clean, gray-box and black-box adversarial accuracies of the cache models by running `evaluate_clean.py`, `evaluate_graybox.py`, or `evaluate_blackbox.py` respectively, e.g.:
 ```
 python3 evaluate_clean.py --val_data_dir /VAL/DATA/DIR/ --mem_save_dir /CACHE/SAVE/DIR/ --layer 'activation_46' --theta 50.0
 ```
