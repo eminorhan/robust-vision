@@ -10,7 +10,7 @@ parser.add_argument('--mem_save_dir', type=str, help='directory where the caches
 parser.add_argument('--layer', type=str, default='activation_46',
                     choices=['fc1000', 'avg_pool', 'activation_46', 'activation_43'],
                     help='which layer to use for embedding')
-parser.add_argument('--reduce_factor', type=int, default=8, help='dimensionality reduction factor')
+parser.add_argument('--reduce_factor', type=int, default=8, help='compression factor')
 
 args = parser.parse_args()
 
