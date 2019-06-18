@@ -76,7 +76,7 @@ val_data_dir = graybox_data_dir + 'graybox_adversarial/l2/' + eps_str + '/'
 
 # Pass adversarial imgs thru memory
 for val_batch in range(num_batches):
-    batch_data = np.load(val_data_dir + 'ResNet50_graybox_l2_advs_%i.npz'%(val_batch+1))
+    batch_data = np.load(val_data_dir + 'ResNet50_graybox_l2_advs_%i.npz'%(val_batch + 1))
     x_val = batch_data['adv_images']
     x_val = preprocess_input(x_val[..., ::-1])
 
