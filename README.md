@@ -44,6 +44,6 @@ python3 evaluate_clean.py --val_data_dir /VAL/DATA/DIR/ --mem_save_dir /CACHE/SA
 
 6. Run white-box attacks against the cache models by running `generate_whitebox_adversarial.py`, e.g.:
 ```
-python3 generate_whitebox_adversarial.py --
+python3 generate_whitebox_adversarial.py --base_dir /BASE/DIR/ --mem_save_dir /CACHE/SAVE/DIR/ --layer 'activation_46' --theta 50.0 --epsilon 0.06
 ```
 
