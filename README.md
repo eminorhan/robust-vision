@@ -47,3 +47,9 @@ python3 evaluate_clean.py --val_data_dir /VAL/DATA/DIR/ --mem_save_dir /CACHE/SA
 python3 generate_whitebox_adversarial.py --base_dir /BASE/DIR/ --mem_save_dir /CACHE/SAVE/DIR/ --layer 'activation_46' --theta 50.0 --epsilon 0.06
 ```
 
+7. For experiments in section 4.2, evaluate the clean and gray-box adversarial accuracies of the compressed cache models by running `evaluate_clean_compressed.py` or `evaluate_graybox_compressed.py` respectively, e.g.:
+```
+python3 evaluate_clean_compressed.py --val_data_dir /VAL/DATA/DIR/ --mem_save_dir /CACHE/SAVE/DIR/ --layer 'activation_46' --theta 50.0 --reduce_method 'kmeans' --reduce_factor 8
+```
+
+
