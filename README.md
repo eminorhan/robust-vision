@@ -10,7 +10,7 @@ Orhan AE, Lake BM (2019) Improving the robustness of ImageNet classifiers using 
 * foolbox >= 1.8.0
 * image-classifiers >= 0.2.1
 * ImageNet training and validation data in their standard directory structure.
-* ImageNet-C data in its standard directory structure (for ImageNet-C results only).
+* [ImageNet-C](https://github.com/hendrycks/robustness) data in its standard directory structure (for ImageNet-C results only).
 
 We recommend installing the required packages via `pip3` inside a virtual environment.
 
