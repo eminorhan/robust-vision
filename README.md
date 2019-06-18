@@ -52,4 +52,7 @@ python3 generate_whitebox_adversarial.py --base_dir /BASE/DIR/ --mem_save_dir /C
 python3 evaluate_clean_compressed.py --val_data_dir /VAL/DATA/DIR/ --mem_save_dir /CACHE/SAVE/DIR/ --layer 'activation_46' --theta 50.0 --reduce_method 'kmeans' --reduce_factor 8
 ```
 
-
+8. For the ImageNet-C experiments, first pre-process the raw ImageNet-C data with `imagenetc_preprocess.py`, then evaluate the cache models by running `evaluate_imagenetc.py`, e.g.:
+```
+python3 evaluate_imagenetc.py --val_data_dir /IMAGENETC/DIR/ --mem_save_dir /CACHE/SAVE/DIR/ --layer 'activation_46' --theta 50.0 --corruption 'brightness' --severity '1'
+```
