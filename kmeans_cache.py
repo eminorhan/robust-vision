@@ -5,7 +5,7 @@ import numpy as np
 from keras.utils import to_categorical
 from sklearn.cluster import MiniBatchKMeans
 
-parser = argparse.ArgumentParser(description='Do online PCA on cache')
+parser = argparse.ArgumentParser(description='Do mini-batch k-means on cache')
 parser.add_argument('--mem_save_dir', type=str, help='directory where the caches are stored')
 parser.add_argument('--layer', type=str, default='activation_46',
                     choices=['fc1000', 'avg_pool', 'activation_46', 'activation_43'],
