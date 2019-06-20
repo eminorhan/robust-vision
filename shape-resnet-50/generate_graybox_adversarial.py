@@ -39,8 +39,8 @@ if __name__ == "__main__":
     n_classes = 1000
 
     # Specify model
-    model_name = 'resnet50_sin_in_in'
-    model = load_model(model_name, model_save_dir)  # change to different model as desired
+    model_name = 'resnet50_sin_in_in'  # change to different model as desired
+    model = load_model(model_name, model_save_dir)  
     print("Model loading completed.")
 
     mean = np.array([0.485, 0.456, 0.406]).reshape((3, 1, 1))
