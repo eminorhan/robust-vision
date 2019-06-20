@@ -13,7 +13,7 @@ from foolbox.criteria import TargetClass
 from NewKerasModel import MultiInputKerasModel
 from utils import Ltwo
 
-parser = argparse.ArgumentParser(description='Evaluate cache models on gray-box adversarial images')
+parser = argparse.ArgumentParser(description='Run white-box attacks against cache models')
 parser.add_argument('--base_dir', type=str, help='Base directory')
 parser.add_argument('--mem_save_dir', type=str, help='directory where the caches are stored')
 parser.add_argument('--layer', type=str, default='activation_46',
