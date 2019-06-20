@@ -62,8 +62,8 @@ print(mem_vals.shape)
 print('Successfully loaded the cache and the projection matrix, if it exists.')
 
 # Specify model
-model_name = 'resnet50_sin_in_in'
-backbone = load_model(model_name, which_layer, model_save_dir)  # change to different model as desired
+model_name = 'resnet50_sin_in_in'  # change to different model as desired
+backbone = load_model(model_name, which_layer, model_save_dir)  
 model = CacheModel(backbone, mem_keys.T, mem_vals, theta)
 
 print("Model loading completed.")
