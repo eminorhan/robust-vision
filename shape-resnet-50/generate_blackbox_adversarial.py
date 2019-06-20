@@ -25,7 +25,7 @@ epsilon = args.epsilon
 n_classes = 1000
 
 # Specify model
-model = torchvision.models.resnet18(pretrained=True).cuda().eval()  # change to different model as desired
+model = torchvision.models.resnet18(pretrained=True).cuda().eval()
 print("Model loading completed.")
 
 mean = np.array([0.485, 0.456, 0.406]).reshape((3, 1, 1))
