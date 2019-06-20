@@ -1,7 +1,7 @@
 # Improving the robustness of ImageNet classifiers with an episodic memory and a shape bias
 The code here can be used to reproduce the results reported in the following paper:
 
-Orhan AE, Lake BM (2019) [Improving the robustness of ImageNet classifiers using elements of human visual cognition](https://sites.google.com/view/eminorhan). arXiv:1905.13715.
+Orhan AE, Lake BM (2019) [Improving the robustness of ImageNet classifiers using elements of human visual cognition](https://sites.google.com/view/eminorhan). arXiv:1906.????.
 
 ## Requirements
 * Keras >= 2.2.4
