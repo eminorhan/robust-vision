@@ -41,8 +41,8 @@ eps_str = 'eps%.2f' % epsilon
 print('Theta:', theta)
 print('Layer:', which_layer)
 
-model_name = 'resnet50_sin_in_in'
-model = load_model(model_name, which_layer, model_save_dir)  # change to different model as desired
+model_name = 'resnet50_sin_in_in'  # change to different model as desired
+model = load_model(model_name, which_layer, model_save_dir)  
 print("Model loading completed.")
 
 num_batches = 10
