@@ -50,5 +50,5 @@ for dir_indx in dir_list:
     all_imgs = np.squeeze(np.asarray(all_imgs))
     all_labels = dir_itr * np.ones(all_imgs.shape[0])
     sio.savemat(args.target_dir + 'class_%i.mat' % dir_itr, {'all_imgs': all_imgs, 'all_labels': all_labels})
-    print('Directory %i of %i'%(dir_itr, len(dir_list)))
+    print('Directory %i of %i' % (dir_itr, len(dir_list)))
     dir_itr = dir_itr + 1
