@@ -50,7 +50,7 @@ mem = Model(inputs=model.input, outputs=output)
 
 # Load cache
 data = np.load(mem_save_dir + 'ResNet50_cache_all_' + args.reduce_method + str(args.reduce_factor) +
-               '_layer%i.npz'%mem_layer)
+               '_layer%i.npz' % mem_layer)
 
 mem_keys, mem_vals = data['mem_keys'], data['mem_vals']
 key = mem_keys / np.linalg.norm(mem_keys, axis=1, keepdims=True)
@@ -68,7 +68,7 @@ val_ground_truth = np.loadtxt('ILSVRC2012_validation_ground_truth.txt', usecols=
 
 # Pass validation imgs thru memory
 for val_batch in range(num_batches):
-    x_val = loadmat(val_data_dir + 'val_batch_%i'%(val_batch + 1))['all_imgs']
+    x_val = loadmat(val_data_dir + 'val_batch_%i' % (val_batch + 1))['all_imgs']
     x_val = preprocess_input(x_val)
 
     y_val = val_ground_truth[(val_batch * num_imgs_per_batch):((val_batch + 1) * num_imgs_per_batch)]
@@ -94,4 +94,4 @@ for val_batch in range(num_batches):
 print('Mean mem. accuracy:', np.mean(val_accs_mem))
 
 np.savez('compressed_cache_clean_accuracy_' + args.reduce_method + str(args.reduce_factor) +
-         'layer%i_theta%2.f.npz'%(mem_layer, theta), mem_acc=np.mean(val_accs_mem), layer=mem_layer, theta=theta)
+         'layer%i_theta%2.f.npz' % (mem_layer, theta), mem_acc=np.mean(val_accs_mem), layer=mem_layer, theta=theta)
