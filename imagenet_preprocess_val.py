@@ -46,9 +46,9 @@ for i in range(num_batches):
         all_imgs.append(x)
 
     all_imgs = np.squeeze(np.asarray(all_imgs))
-    all_labels = labels[(i*num_imgs_per_batch):((i+1)*num_imgs_per_batch)]
+    all_labels = labels[(i * num_imgs_per_batch):((i + 1) * num_imgs_per_batch)]
 
     print(all_imgs.shape)
     print(all_labels.shape)
 
-    sio.savemat(args.target_dir + 'val_batch_%i.mat'%(i+1), {'all_imgs': all_imgs, 'all_labels': all_labels})
+    sio.savemat(args.target_dir + 'val_batch_%i.mat' % (i + 1), {'all_imgs': all_imgs, 'all_labels': all_labels})
