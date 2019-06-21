@@ -36,7 +36,7 @@ val_accs_mem = np.zeros(num_batches)
 val_ground_truth = np.loadtxt('ILSVRC2012_validation_ground_truth.txt', usecols=1)
 
 for val_batch in range(num_batches):
-    x_val = loadmat(val_data_dir + 'val_batch_%i'%(val_batch + 1))['all_imgs']
+    x_val = loadmat(val_data_dir + 'val_batch_%i' % (val_batch + 1))['all_imgs']
     y_val = val_ground_truth[(val_batch * num_imgs_per_batch):((val_batch + 1) * num_imgs_per_batch)]
 
     adv_images = np.zeros((num_imgs_per_batch, 224, 224, 3))
@@ -73,7 +73,7 @@ for val_batch in range(num_batches):
               adv_pred_labels[img_i])
 
     # save adversarial images and target labels
-    np.savez(adv_save_dir + 'eps%.2f'%epsilon + '/ResNet18_blackbox_l2_advs_%i.npz'%(val_batch + 1),
+    np.savez(adv_save_dir + 'eps%.2f' % epsilon + '/ResNet18_blackbox_l2_advs_%i.npz' % (val_batch + 1),
              adv_images = adv_images,
              clean_labels = clean_labels,
              target_labels = target_labels,
@@ -81,4 +81,4 @@ for val_batch in range(num_batches):
              adv_pred_labels = adv_pred_labels
              )
 
-    print('%i of %i completed; adversarial images saved!'%(val_batch, num_batches))
+    print('%i of %i completed; adversarial images saved!' % (val_batch, num_batches))
