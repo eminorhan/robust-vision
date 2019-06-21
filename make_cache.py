@@ -49,8 +49,8 @@ all_mem_keys = []
 all_mem_vals = []
 
 for cl_idx in range(n_classes):
-    x_train = loadmat(train_data_dir + 'class_%i.mat'%cl_idx)['all_imgs']
-    y_train = loadmat(train_data_dir + 'class_%i.mat'%cl_idx)['all_labels']
+    x_train = loadmat(train_data_dir + 'class_%i.mat' % cl_idx)['all_imgs']
+    y_train = loadmat(train_data_dir + 'class_%i.mat' % cl_idx)['all_labels']
 
     x_train = preprocess_input(x_train)
     y_train = y_train[0, :]
@@ -73,6 +73,6 @@ mem_vals = to_categorical(mem_vals, n_classes)
 print('Key matrix shape:', mem_keys.shape)
 print('Value matrix shape:', mem_vals.shape)
 
-np.savez(mem_save_dir + 'ResNet50_cache_all_layer%i.npz'%mem_layer, mem_keys=mem_keys, mem_vals=mem_vals)
+np.savez(mem_save_dir + 'ResNet50_cache_all_layer%i.npz' % mem_layer, mem_keys=mem_keys, mem_vals=mem_vals)
 
 print('Successfully saved the cache.')
