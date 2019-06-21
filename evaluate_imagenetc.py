@@ -52,7 +52,7 @@ print('Cache layer:', model.layers[mem_layer].name)
 mem = Model(inputs=model.input, outputs=output)
 
 # Load cache
-data = np.load(mem_save_dir + 'ResNet50_cache_all_layer%i.npz'%mem_layer)
+data = np.load(mem_save_dir + 'ResNet50_cache_all_layer%i.npz' % mem_layer)
 mem_keys, mem_vals = data['mem_keys'], data['mem_vals']
 key = mem_keys / np.linalg.norm(mem_keys, axis=1, keepdims=True)
 
@@ -64,9 +64,9 @@ val_accs_mem = np.zeros(num_batches)
 
 # Pass imgs thru memory
 for val_batch in range(num_batches):
-    x_val = loadmat(val_data_dir + 'class_%i.mat'%val_batch)['all_imgs']
+    x_val = loadmat(val_data_dir + 'class_%i.mat' % val_batch)['all_imgs']
     x_val = preprocess_input(x_val)
-    y_val = loadmat(val_data_dir + 'class_%i.mat'%val_batch)['all_labels']
+    y_val = loadmat(val_data_dir + 'class_%i.mat' % val_batch)['all_labels']
 
     test_mem = mem.predict(x_val)
 
@@ -85,5 +85,5 @@ for val_batch in range(num_batches):
 
 print('Mean mem. accuracy:', np.mean(val_accs_mem))
 
-np.savez('cache_imagenetc_accuracy_' + args.corruption + args.severity + '_layer%i_theta%2.f.npz'%(mem_layer, theta),
+np.savez('cache_imagenetc_accuracy_' + args.corruption + args.severity + '_layer%i_theta%2.f.npz' % (mem_layer, theta),
          mem_acc=np.mean(val_accs_mem), layer=mem_layer, theta=theta)
