@@ -53,7 +53,7 @@ print('Cache layer:', model.layers[mem_layer].name)
 mem = Model(inputs=model.input, outputs=output)
 
 # Load cache
-data = np.load(mem_save_dir + 'ResNet50_cache_all_layer%i.npz'%mem_layer)
+data = np.load(mem_save_dir + 'ResNet50_cache_all_layer%i.npz' % mem_layer)
 mem_keys, mem_vals = data['mem_keys'], data['mem_vals']
 key = mem_keys / np.linalg.norm(mem_keys, axis=1, keepdims=True)
 
@@ -68,7 +68,7 @@ val_data_dir = graybox_data_dir + 'graybox_adversarial/l2/' + eps_str + '/'
 
 # Pass adversarial imgs thru memory
 for val_batch in range(num_batches):
-    batch_data = np.load(val_data_dir + 'ResNet50_graybox_l2_advs_%i.npz'%(val_batch + 1))
+    batch_data = np.load(val_data_dir + 'ResNet50_graybox_l2_advs_%i.npz' % (val_batch + 1))
     x_val = batch_data['adv_images']
     x_val = preprocess_input(x_val[..., ::-1])
 
@@ -98,7 +98,7 @@ for val_batch in range(num_batches):
 print('Mean mem. accuracy:', np.mean(adv_accs_mem))
 print('Mean no mem. accuracy:', np.mean(adv_accs_nomem))
 
-np.savez('cache_graybox_accuracy_' + eps_str + '_layer%i_theta%2.f.npz'%(mem_layer, theta),
+np.savez('cache_graybox_accuracy_' + eps_str + '_layer%i_theta%2.f.npz' % (mem_layer, theta),
          mem_acc=np.mean(adv_accs_mem),
          no_mem_acc=np.mean(adv_accs_nomem),
          layer=mem_layer,
