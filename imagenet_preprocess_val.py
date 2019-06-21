@@ -22,7 +22,7 @@ labels = np.loadtxt('ILSVRC2012_validation_ground_truth.txt', usecols=1)
 
 for i in range(num_batches):
     all_imgs = []
-    for file_indx in file_list[(i*num_imgs_per_batch):((i+1)*num_imgs_per_batch)]:
+    for file_indx in file_list[(i * num_imgs_per_batch):((i + 1) * num_imgs_per_batch)]:
         file_name = args.source_dir + file_indx
 
         img = cv2.imread(file_name)
