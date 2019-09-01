@@ -69,7 +69,7 @@ new_model.eval()
 with torch.no_grad():
 
     for cl_idx in range(n_classes):
-        y_train = loadmat(train_data_dir + 'class_%i.mat'%cl_idx)['all_labels']
+        y_train = loadmat(train_data_dir + 'class_%i.mat' % cl_idx)['all_labels']
         y_train = y_train[0, :]
 
         # Memory values
@@ -77,7 +77,7 @@ with torch.no_grad():
         all_mem_vals.append(mem_vals)
 
         # preprocess for pytorch
-        data_x = loadmat(train_data_dir + 'class_%i.mat'%cl_idx)['all_imgs']
+        data_x = loadmat(train_data_dir + 'class_%i.mat' % cl_idx)['all_imgs']
 
         # First batch
         x_train_1 = data_x[:625, :, :, :]
