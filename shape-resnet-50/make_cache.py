@@ -115,5 +115,5 @@ with torch.no_grad():
     print('Key matrix shape:', mem_keys.shape)
     print('Value matrix shape:', mem_vals.shape)
 
-    np.savez(mem_save_dir + 'ResNet50_sin_in_in_layer%i.npz'%which_layer, mem_keys=mem_keys, mem_vals=mem_vals)
+    np.savez(mem_save_dir + 'ResNet50_sin_in_in_layer%i.npz' % which_layer, mem_keys=mem_keys, mem_vals=mem_vals)
     print('Successfully saved the cache.')
